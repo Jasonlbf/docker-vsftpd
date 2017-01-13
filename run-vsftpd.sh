@@ -10,6 +10,11 @@ if [ "$FTP_PASS" = "**Random**" ]; then
     export FTP_PASS=`cat /dev/urandom | tr -dc A-Z-a-z-0-9 | head -c${1:-16}`
 fi
 
+# If no env var for REAL_USER has been specified, use 'www':
+if [ "$REAL_USER" = "**String**" ]; then
+    export REAL_USER='www'
+fi
+
 # Do not log to STDOUT by default:
 if [ "$LOG_STDOUT" = "**Boolean**" ]; then
         export LOG_STDOUT=''
