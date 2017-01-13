@@ -13,6 +13,7 @@ RUN yum install -y \
 	db4
 
 ENV FTP_USER **String**
+ENV REAL_USER **String**
 ENV FTP_PASS **Random**
 ENV PASV_ADDRESS **IPv4**
 ENV PASV_MIN_PORT 21100
